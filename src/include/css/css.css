@@ -1,0 +1,35 @@
+#loginDiv {
+    margin: 0 auto;
+    align-content: center;
+}
+
+.buttonsDiv {
+    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.blueBtn {
+    background-color: rgb(40, 133, 253) !important;    
+    text-shadow: none !important;
+    color: whitesmoke !important;
+}
+
+.btn {
+    background-color: rgb(250, 252, 255) !important; 
+    text-shadow: none !important;
+    color: rgb(2, 2, 2) !important;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.card {
+    background-color: rgb(40, 133, 253);
+    color: whitesmoke;
+    text-shadow: none !important;
+    border-radius: 5px;
+    height: 60px;
+}
