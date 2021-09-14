@@ -51,8 +51,8 @@
                         </div>
 
                         <div class="buttonsDiv">
-                            <input type="submit" class="blueBtn" data-icon="check" data-inline="true">
-                            <a href="#" class="link"><button class="btn" data-icon="arrow-l" data-iconpos="left" data-inline="true">Voltar</button></a>
+                            <input type="submit" class="blueBtn" data-icon="check" data-inline="true" value="Criar">
+                            <a href="../../index.php" class="link"><button class="btn" data-icon="arrow-l" data-iconpos="left" data-inline="true">Voltar</button></a>
                         </div>    
                     </form>                
                 </div>

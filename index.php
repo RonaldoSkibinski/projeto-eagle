@@ -11,6 +11,8 @@
         <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+        <script src="src/include/js/auth.js"></script>
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
     </head>
@@ -35,13 +37,13 @@
                     </div>
                     <div data-role="fieldcontain" class="ui-hide-label">
                         <label for="password">Senha:</label>
-                        <input type="text" name="password" id="password" value="" placeholder="Senha"/>
+                        <input type="password" name="password" id="password" value="" placeholder="Senha"/>
                     </div>
 
                     <div class="buttonsDiv">
-                        <a href="#" class="link"><button class="blueBtn" data-inline="true">Logar</button></a>
-                        <a href="#" class="link"><button class="btn" data-icon="star" data-iconpos="left" data-inline="true">Criar Conta</button></a>
-                    </div>                    
+                        <button class="blueBtn" data-inline="true" onclick="auth()">Logar</button>
+                        <a href="src/components/signup.php" class="link"><button class="btn" data-icon="star" data-iconpos="left" data-inline="true">Criar Conta</button></a>
+                    </div>                   
                 </div>
 
             </div>

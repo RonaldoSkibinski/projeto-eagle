@@ -45,6 +45,8 @@
       
     }
 
+    // ------- FUNCTION CONSULTA 
+
     function consulta($sql) {
       $this->res = mysqli_query($this->cnx, $sql);
       if (!$this->res) {

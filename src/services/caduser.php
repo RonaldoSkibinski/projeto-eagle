@@ -11,16 +11,23 @@
 
     $db->consulta("select email from user where email='$_POST[email]'");
 
-    if($line=pg_num_rows($db->res) != 0){
+    if($line=mysqli_num_rows($db->res) != 0){
 
-      echo("<script>alert('Este Email já Está Cadastrado.');</script>");
+      echo(" Este Email já Está Cadastrado.  ");
 
     } else {
 
       try {
+
+        $psswd = $_POST['password'];
+
+        $options = ['cost' => 8];
+
+        $hash = password_hash($psswd,  PASSWORD_DEFAULT, $options);
+
         $db->consulta("insert into user (name, phone, email, address, password) 
         values 
-        ('$_POST[name]','$_POST[phone]', '$_POST[email]','$_POST[address]','$_POST[password]')");
+        ('$_POST[name]','$_POST[phone]', '$_POST[email]','$_POST[address]','$hash')");
 
         echo("<script>alert('Usuario Cadastrado com Sucesso!');top.location=\"../../index.php\";</script>"); 
       }  catch (Exception $e) {
