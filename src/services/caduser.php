@@ -1,5 +1,4 @@
 <?php
-  session_start();
   require("../include/lib/lib.php");
   $db = new banco();
   
@@ -9,33 +8,34 @@
   
   if($_GET['add'] == 1){
 
-    $db->consulta("select email from user where email='$_POST[email]'");
-
-    if($line=mysqli_num_rows($db->res) != 0){
-
-      echo(" Este Email já Está Cadastrado.  ");
-
-    } else {
-
       try {
 
-        $psswd = $_POST['password'];
+        $db->consulta("select email from user where email='$_POST[email]'");
 
-        $options = ['cost' => 8];
+        if($line=mysqli_num_rows($db->res) != 0){
 
-        $hash = password_hash($psswd,  PASSWORD_DEFAULT, $options);
+          echo(" Este Email já Está Cadastrado.  ");
 
-        $db->consulta("insert into user (name, phone, email, address, password) 
-        values 
-        ('$_POST[name]','$_POST[phone]', '$_POST[email]','$_POST[address]','$hash')");
+        } else {
 
-        echo("<script>alert('Usuario Cadastrado com Sucesso!');top.location=\"../../index.php\";</script>"); 
+          $psswd = $_POST['password'];
+
+          $options = ['cost' => 8];
+
+          $hash = password_hash($psswd,  PASSWORD_DEFAULT, $options);
+
+          $db->consulta("insert into user (name, phone, email, address, password) 
+          values 
+          ('$_POST[name]','$_POST[phone]', '$_POST[email]','$_POST[address]','$hash')");
+
+          echo("<script>alert('Usuario Cadastrado com Sucesso!');top.location=\"../../index.php\";</script>"); 
+        }
+        
       }  catch (Exception $e) {
-        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
-    }
-      
 
-    }   
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+
+    }
 
   }
 

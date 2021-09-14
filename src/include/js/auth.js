@@ -14,8 +14,18 @@ function auth() {
 
     request.onreadystatechange = function(){
         if(request.readyState == 4){
-        var div = document.getElementById('respincli');
-        div.innerHTML = request.responseText;
+
+            var response = request.responseText;
+
+            alert(response); 
+
+            if(response == "1") {
+                window.location.replace('src/components/home.php');
+            }else if(response == "2") {
+                alert('Senha incorreta'); 
+            }else {
+                alert('Usuario inexistente.'); 
+            }
         }
     }
 }

@@ -37,7 +37,7 @@
         if(!$this->cnx) {
           die('Não foi possível conectar: ' . mysqli_error($this->cnx));
         }
-        echo 'Conexão bem sucedida';
+        //echo 'Conexão bem sucedida';
 
       }catch (Exception $e) {
         echo 'Exceção capturada: ',  @$e->getMessage(), "\n";

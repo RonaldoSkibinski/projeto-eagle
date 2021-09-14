@@ -9,25 +9,47 @@
   
 if($_GET['user'] != ""){
 
-    $db->consulta("select password from user where email='$_GET[user]'");
+    try {
 
-    if($line=mysqli_num_rows($db->res) != 0){
+        $db->consulta("select password from user where email='$_GET[user]'");
 
-        
-        $psswd = $_GET['psswd'];
-        
-        while ($row = mysqli_fetch_row($db->res)) {
-            $hash = $row[0];
-        }
-        
-        if (password_verify($psswd, $hash)) {
-            echo 'A senha é válida';
+        if($line=mysqli_num_rows($db->res) != 0){
+            
+            $psswd = $_GET['psswd'];
+            
+            while ($row = mysqli_fetch_row($db->res)) {
+                $hash = $row[0];
+            }
+            
+            if (password_verify($psswd, $hash)) {
+
+                // LOGIN OK
+                echo ('1');
+
+                $db->consulta("select name from user where email='$_GET[user]'");
+
+                if($line=mysqli_num_rows($db->res) != 0){
+                    while ($row = mysqli_fetch_row($db->res)) {
+                        $name = $row[0];
+                    }
+                }
+
+                @$_SESSION["user"]["email"]= [$name][$_GET['user']];
+
+            } else {
+                // WRONG PASSWORD
+                echo ('2');
+            }
+
         } else {
-            echo 'A senha é inválida.';
+            // WRONG USER
+            echo ('3');
         }
 
-    } else {
-        echo 'Usuario não cadastrado';
+    }catch(Exception $e) {
+
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+        
     }
       
 

@@ -53,6 +53,21 @@
                 <a href="#" data-icon="arrow-u">Subir</a>
             </div>
         </div> 
+
+        <!-- Modal Structure -->
+
+        <div id="backMsg"></div>
+
+        <div id="congratsMessage" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h2>Credenciais não Encontradas </h2>
+                <p>Por favor, revise as informações de login.</p>
+            </div>
+            <div class="modal-footer">
+                <a (click)="disarm()" class="modal-close waves-effect waves-green btn-flat">Ok</a>
+            </div>
+            <div id="inner"></div>
+        </div>
         
     </body>
 </html>
