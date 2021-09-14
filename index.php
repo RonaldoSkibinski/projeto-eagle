@@ -18,7 +18,7 @@
     <body>
 
         <div data-role="page"> 
-            <div data-role="header" data-theme="b">
+            <div data-role="header" class="header">
                 <h1>Farmacia Terezinha</h1>
             </div>            
 
@@ -28,7 +28,7 @@
                     <h4> Bem Vindo(a) à Farmacia Terezinha! </h4>
                 </div>
 
-                <div id="loginDiv">
+                <div id="mDiv">
                     <div data-role="fieldcontain" class="ui-hide-label">
                         <label for="username">Usuario:</label>
                         <input type="text" name="username" id="username" value="" placeholder="Usuario"/>

@@ -1,4 +1,11 @@
-#loginDiv {
+.header {
+    background-color:rgb(40, 133, 253) !important;
+    color: whitesmoke !important;
+    text-shadow: none !important;
+    height: 60px !important;
+}
+
+#mDiv {
     margin: 0 auto;
     align-content: center;
 }

@@ -28,12 +28,34 @@
     public $res;
     public $cnx;
     public $cheader;
+
     function __construct() {
-      $this->cnx =pg_connect("host=localhost dbname=cadCli user=postgres password=postgres");
+      try {
+
+        @$this->cnx = mysqli_connect('localhost', 'root', 'password', 'farmaciaterezinha');
+
+        if(!$this->cnx) {
+          die('Não foi possível conectar: ' . mysqli_error($this->cnx));
+        }
+        echo 'Conexão bem sucedida';
+
+      }catch (Exception $e) {
+        echo 'Exceção capturada: ',  @$e->getMessage(), "\n";
+      }
+      
     }
+
     function consulta($sql) {
-      $this->res =pg_query($sql);  
+      $this->res = mysqli_query($this->cnx, $sql);
+      if (!$this->res) {
+          @die('Invalid query: ' . mysqli_error($this->cnx));
+      }  
     }
+
+
+
+
+
          function lista($name='tabela',$inc='',$alt='',$exc='',$img='') {
             //Botão de Início
              echo ("<div style='width:100px;
