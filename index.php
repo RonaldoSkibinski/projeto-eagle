@@ -31,7 +31,7 @@
                 <div id="loginDiv">
                     <div data-role="fieldcontain" class="ui-hide-label">
                         <label for="username">Usuario:</label>
-                        <input type="text" name="username" id="username" value="" placeholder="Username"/>
+                        <input type="text" name="username" id="username" value="" placeholder="Usuario"/>
                     </div>
                     <div data-role="fieldcontain" class="ui-hide-label">
                         <label for="password">Senha:</label>
@@ -39,8 +39,8 @@
                     </div>
 
                     <div class="buttonsDiv">
-                        <a href="#" class="link"><button class="blueBtn">Logar</button></a>
-                        <a href="#" class="link"><button class="btn" data-icon="star">Criar Conta</button></a>
+                        <a href="#" class="link"><button class="blueBtn" data-inline="true">Logar</button></a>
+                        <a href="#" class="link"><button class="btn" data-icon="star" data-iconpos="left" data-inline="true">Criar Conta</button></a>
                     </div>                    
                 </div>
 

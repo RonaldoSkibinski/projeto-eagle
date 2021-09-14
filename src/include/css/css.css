@@ -8,18 +8,21 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    text-align: center;
 }
 
 .blueBtn {
     background-color: rgb(40, 133, 253) !important;    
     text-shadow: none !important;
     color: whitesmoke !important;
+    width: 200px !important;
 }
 
 .btn {
     background-color: rgb(250, 252, 255) !important; 
     text-shadow: none !important;
     color: rgb(2, 2, 2) !important;
+    width: 200px !important;
 }
 
 .link {
