@@ -1,3 +1,4 @@
+// USER AUTHENTICATES
 
 function auth() {
     this.email = document.getElementById('username').value;
@@ -17,17 +18,32 @@ function auth() {
 
             var response = request.responseText;
 
-            alert(response); 
+            backMsg = document.getElementById('backMsg');
+            congratsMessage = document.getElementById('congratsMessage');
 
             if(response == "1") {
                 window.location.replace('src/components/home.php');
             }else if(response == "2") {
+
+                backMsg.style.display = "block";
+                congratsMessage.style.display = "block";
+
                 alert('Senha incorreta'); 
             }else {
-                alert('Usuario inexistente.'); 
+
+                backMsg.style.display = "block";
+                congratsMessage.style.display = "block"; 
             }
         }
     }
+}
+
+function disarm() {
+    backMsg = document.getElementById('backMsg');
+    congratsMessage = document.getElementById('congratsMessage');
+
+    backMsg.style.display = "none";
+    congratsMessage.style.display = "none";
 }
 
 
