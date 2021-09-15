@@ -7,7 +7,7 @@
 //------------------------------------ AUTH USER -------------------------------------------------------------------------------------------------------------------------------------
 
   
-if($_GET['user'] != ""){
+if(@$_GET['user'] != ""){
 
     try {
 
@@ -26,7 +26,7 @@ if($_GET['user'] != ""){
                 // LOGIN OK
                 echo ('1');
 
-                $db->consulta("select id, name from user where email='$_GET[user]'");
+                @$db->consulta("select id, name from user where email='$_GET[user]'");
 
                 $name;
                 $id;
@@ -52,6 +52,32 @@ if($_GET['user'] != ""){
         } else {
             // WRONG USER
             echo ('3');
+        }
+
+    }catch(Exception $e) {
+
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+        
+    }
+      
+
+}   
+
+// VERIFY EMAIL ------------------------------------------------------------------------
+
+if(@$_GET['email'] != ""){
+
+    try {
+
+        @$db->consulta("select email from user where email='$_GET[email]'");
+
+        if($line=mysqli_num_rows($db->res) != 0){
+            
+            // EMAIL EM USO
+            echo ('2');
+
+        } else {
+            echo ('1');
         }
 
     }catch(Exception $e) {

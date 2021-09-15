@@ -14,7 +14,7 @@
 
         if($line=mysqli_num_rows($db->res) != 0){
 
-          echo(" Este Email já Está Cadastrado.  ");
+          echo("email ja esta em uso");
 
         } else {
 
@@ -28,7 +28,7 @@
           values 
           ('$_POST[name]','$_POST[phone]', '$_POST[email]','$_POST[address]','$hash')");
 
-          echo("<script>alert('Usuario Cadastrado com Sucesso!');top.location=\"../../index.php\";</script>"); 
+          echo("<script>top.location=\"../../index.php\";</script>"); 
         }
         
       }  catch (Exception $e) {

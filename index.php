@@ -20,6 +20,7 @@
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
         <script src="src/include/js/auth.js"></script>
+        <script src="src/include/js/signup.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,11 +33,15 @@
                 <h1>Farmacia Terezinha</h1>
             </div>            
 
-            <div data-role="content">
+            <div class="content" data-role="content">
 
                 <div class="card">
-                    <h4> Bem Vindo(a) à Farmacia Terezinha! </h4>
+                    <div><img id="imgCard" src="src/imgs/icons/logofarmacia.png"></div>                    
+                    <div><h4> Bem Vindo(a) à Farmacia </h4></div>
                 </div>
+
+                <h3>Por Favor</h3>
+                <h5>Insira seu Email e Senha para Acessar:</h5>
 
                 <div id="mDiv">
                     <div data-role="fieldcontain" class="ui-hide-label">
@@ -52,6 +57,16 @@
                         <button class="blueBtn" data-inline="true" onclick="auth()">Logar</button>
                         <a href="src/components/signup.php" class="link"><button class="btn" data-icon="star" data-iconpos="left" data-inline="true">Criar Conta</button></a>
                     </div>                   
+                </div>
+
+                <h3>Alguma Duvida?</h3>
+                <h5>Entre em contato conosco:</h5>
+
+                <div>
+                    <div>
+                        <img class="cardImg" src="src/imgs/imgs/email.jpeg">
+                        <img class="cardImg" src="src/imgs/imgs/whats.jpeg">
+                    </div>
                 </div>
 
             </div>          

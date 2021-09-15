@@ -16,6 +16,9 @@
         height: 600px !important;    
         top: 50px;
     }
+    #mDiv {
+        width: 450px !important;
+    }
 }
 
 @media only screen and (max-width: 820px) {
@@ -24,6 +27,21 @@
     }
 }
 
+@media only screen and (min-width: 390px) {
+    .card {
+        width: 350px !important;
+    }
+}
+
+.cardImg {
+    border-radius: 15px;
+    width: 60px;
+    cursor: pointer;
+}
+
+.cardImg:hover {
+    width: 65px;
+}
 
 .content {
     text-align: center;
@@ -87,6 +105,15 @@ a {
     text-shadow: none !important;
     border-radius: 5px;
     height: 60px;
+    display: flex;    
+    margin: 0 auto;
+    padding: 2px;
+}
+
+#imgCard {
+    width: 50px;
+    margin-top: 10px;
+    padding-right: 15px;
 }
 
 #congratsMessage {
