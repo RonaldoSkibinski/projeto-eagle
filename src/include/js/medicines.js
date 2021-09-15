@@ -50,9 +50,10 @@ function addToCart(idProd) {
         medRequest.open('GET', '../services/medicines.php?add=' + this.idProd);
         medRequest.send();
     }
-
+    
     addMed();
     getMedicines();
+    cart();
 
 }
 
@@ -62,6 +63,8 @@ function getCart() {
 
     getRequest = new XMLHttpRequest(); 
 
+    getAll();
+
     function getAll() {
         getRequest.open('GET', '../services/medicines.php?get=non');
         getRequest.send();
@@ -70,11 +73,14 @@ function getCart() {
     getRequest.onreadystatechange = function(){
         if(getRequest.readyState == 4){
             var cart = document.getElementById('cart');
+
+            res = getRequest.responseText;
+
             cart.innerHTML = getRequest.responseText;          
         }
     }
 
-    getAll();
+    
     getTotCart();
 }
 
