@@ -28,6 +28,7 @@ $name = $_SESSION['user'][0];
         <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
         <script src="../include/js/medicines.js"></script>
+        <script src="../include/js/sells.js"></script>
 
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -65,8 +66,10 @@ $name = $_SESSION['user'][0];
 
         <div id="cart-card">
             <div id="cart"></div>
-            <select>
-
+            <select id="mpay">
+                <option value="Avista" selected>Avista</option>
+                <option value="Debito">Debito</option>
+                <option value="Credito">Credito</option>
             </select>
             <div>
                 <table>
@@ -74,7 +77,7 @@ $name = $_SESSION['user'][0];
                         <td><div id="total"></div></td>
                     </tr>
                     <tr>
-                        <td><a onclick=""><button>Comprar</a></button></td>
+                        <td><a onclick="buy()"><button id="buyBtn" disabled>Comprar</a></button></td>
                     </tr>
                     <tr>
                         <td><a onclick="cart()"><button>Fechar</a></button></td>

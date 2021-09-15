@@ -1,3 +1,4 @@
+// SHOW CART
 
 function cart() {
 
@@ -113,9 +114,9 @@ function remCart(idProd) {
         remRequest.send();
     }
 
-    remMed();
-    getCart();
+    remMed();    
     getMedicines();
+    getCart();
     getTotCart()
 
 }

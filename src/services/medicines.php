@@ -107,7 +107,14 @@ if(@$_GET['get'] == "true"){
                 </div>
                 
                 ");
-            }          
+            }     
+            
+            echo("<script> 
+
+                        buyBtn document.getElementById('buyBtn');
+                        buyBtn.style.disabled = 'false';
+
+                </script>");
 
         } else {
             // EMPTY TABLE
@@ -129,6 +136,7 @@ if(@$_GET['get'] == "true"){
     if($line=mysqli_num_rows($db->res) != 0){
         
         while ($row = mysqli_fetch_row($db->res)) {
+            $_SESSION['total'] = $row[0];
             echo($row[0]);
         }
     }
@@ -159,7 +167,7 @@ if(@$_GET['rem']){
 
         $id = $_SESSION['id'][0];
         
-        $db->consulta("delete from cart where userId = '$id' and medCod = '$_GET[rem]'");
+        $db->consulta("delete from cart where userId = '$id' and medCod = '$_GET[rem]' limit 1");
 
 
     } catch (Exception $e) {

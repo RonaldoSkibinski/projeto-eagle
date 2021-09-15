@@ -42,8 +42,32 @@ INSERT INTO medicines (cod, name, qtdmg, lab, val, img) VALUES (
 create table cart (
 	id INT NOT NULL AUTO_INCREMENT,
     userId INT,
-    medCod INT
+    medCod INT,
     PRIMARY KEY(id)
 ) 
 
+create table sells (
+	id INT NOT NULL AUTO_INCREMENT,
+    userId INT,
+    dat VARCHAR(30),
+    mpay VARCHAR(30),
+    total DOUBLE,
+    PRIMARY KEY(id)
+) 
+
+create table sellsmedicines (
+	id INT NOT NULL AUTO_INCREMENT,
+    sellid INT,
+    medCod INT,
+    PRIMARY KEY(id)
+) 
+
+SELECT Max(id) as number FROM sells;
+
+select * from sells
+select * from sellsmedicines
 select * from cart
+
+select SUM(val) AS total from medicines
+        INNER JOIN cart ON cart.medCod = medicines.cod and cart.userId = 2
+ORDER BY Customers.CustomerName;
