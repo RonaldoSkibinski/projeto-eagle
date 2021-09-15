@@ -3,6 +3,11 @@
         width: 650px !important;
     }
     #cart-card {
+        width: 660px !important;        
+        top: 50px;
+        height: 560px !important;
+    }
+    #pur-card {
         width: 60% !important;        
         top: 200px;
     }
@@ -11,7 +16,6 @@
 
 a {
     cursor: pointer;
-    color: rgb(40, 133, 253);
 }
 
 .header {
@@ -77,7 +81,33 @@ a {
     border-radius: 15px;
 }
 
+#popup {
+    position: absolute;
+    width: 120px;
+    display: none;    
+    background-color: whitesmoke;
+    z-index: 2;
+    padding: 15px;
+    border-radius: 0px 0px 15px 15px;
+    right: 0px;
+    top: 62px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
 #cart-card {
+    position: fixed;
+    height: 100vh;
+    display: none;    
+    background-color: whitesmoke;
+    margin: 0 auto;
+    z-index: 2;
+    padding: 15px;
+    border-radius: 15px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#pur-card {
     position: fixed;
     height: 450px;
     display: none;    
@@ -90,8 +120,14 @@ a {
     transform: translate(-50%, 0);
 }
 
-#cart {
-    
+#cart {    
+    overflow: auto;
+    height: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
+}
+
+#purchases {    
     overflow: auto;
     height: 350px;
 }
@@ -144,6 +180,23 @@ a {
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
 }
 
+.align {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btnNorm {
+    border: none;
+    width: 100px;
+    height: 40px;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: rgb(40, 133, 253);
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+}
+
 .btnMed {
     border: none;
     height: 40px;
@@ -172,4 +225,20 @@ a {
 
 .td-bar {
     background-color: rgb(255, 255, 227);
+}
+
+.tdHead {
+    font-weight: bold;
+}
+
+.purch {
+    margin-top: 20px;
+}
+
+#mpay {
+    border: none;
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
 }

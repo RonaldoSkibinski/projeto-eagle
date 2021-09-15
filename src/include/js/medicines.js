@@ -75,7 +75,7 @@ function getCart() {
     }
 
     getAll();
-    getTotCart()
+    getTotCart();
 }
 
 // GET TOTAL CART
@@ -119,4 +119,16 @@ function remCart(idProd) {
     getCart();
     getTotCart()
 
+}
+
+// OPEN POPUP
+
+function popup() {
+    $( "#popup" ).toggle();
+}
+
+// LOGOUT
+
+function logout() {
+    window.location.href = "../../";
 }

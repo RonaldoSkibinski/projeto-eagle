@@ -42,7 +42,7 @@ $name = $_SESSION['user'][0];
                     <tr>
                         <td><h4>Olá <?php echo($name) ?></h4></td>
                         <td><a onclick="cart()"><img width="25" src="../imgs/icons/cart.png"></a></td>
-                        <td><a><img width="25" src="../imgs/icons/user.png"></a></td>
+                        <td><a onclick="popup()"><img width="25" src="../imgs/icons/user.png"></a></td>
                     </tr>
                 </table>
                 
@@ -51,6 +51,11 @@ $name = $_SESSION['user'][0];
             <div data-role="content">
 
                 <div id="medicines"></div>              
+                
+                <div id="popup">
+                    <p><a onclick="purchases()">Compras</a></p>
+                    <p><a onclick="logout()">Sair</a></p>
+                </div>
 
             </div>          
 
@@ -65,24 +70,33 @@ $name = $_SESSION['user'][0];
         <div id="backMsg"></div>
 
         <div id="cart-card">
-            <div id="cart"></div>
-            <select id="mpay">
-                <option value="Avista" selected>Avista</option>
-                <option value="Debito">Debito</option>
-                <option value="Credito">Credito</option>
-            </select>
-            <div>
-                <table>
+            <h4> Carrinho de Compras: </h4>
+            <div id="cart"></div>            
+            <div class="align">
+                <select id="mpay">
+                    <option value="Avista" selected>Avista</option>
+                    <option value="Debito">Debito</option>
+                    <option value="Credito">Credito</option>
+                </select>
+                <table style="width: 100%;">
                     <tr>
-                        <td><div id="total"></div></td>
+                        <td class="tdHead" colspan="2"><div id="total"></div></td>
                     </tr>
                     <tr>
-                        <td><a onclick="buy()"><button id="buyBtn" disabled>Comprar</a></button></td>
+                        <td class="tdHead" colspan="2">Vai chegar em 3 dias.</td>
                     </tr>
                     <tr>
-                        <td><a onclick="cart()"><button>Fechar</a></button></td>
+                        <td><a onclick="buy()"><button id="buyBtn" class="btnNorm">Comprar</a></button></td>
+                        <td><a onclick="cart()"><button class="btnNorm">Fechar</a></button></td>
                     </tr>
                 </table>              
+            </div>
+        </div>
+
+        <div id="pur-card">
+            <div id="purchases"></div>
+            <div>
+                <a onclick="purchases()"><button>Fechar</a></button>           
             </div>
         </div>
 

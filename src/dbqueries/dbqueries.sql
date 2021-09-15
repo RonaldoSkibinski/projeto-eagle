@@ -67,7 +67,17 @@ SELECT Max(id) as number FROM sells;
 select * from sells
 select * from sellsmedicines
 select * from cart
+select * from medicines
 
 select SUM(val) AS total from medicines
         INNER JOIN cart ON cart.medCod = medicines.cod and cart.userId = 2
+        
+select sells.total, sells.dat from sells
+
+select medicines.name, medicines.lab from medicines
+                INNER JOIN sellsmedicines ON sellsmedicines.medCod = medicines.cod 
+                AND sellsmedicines.sellid = 1
+        
+	INNER JOIN sellsmedicines INNER JOIN sells ON sells.userId = 21 AND sellsmedicines.sellid = 21      
+        
 ORDER BY Customers.CustomerName;

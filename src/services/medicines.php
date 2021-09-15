@@ -84,8 +84,7 @@ if(@$_GET['get'] == "true"){
                             </td>
                         </tr>
                         <tr>
-                            <td>
-                                <h5>"); echo($row[1]); echo(" - "); echo($row[2]); echo("</h5>
+                            <td class='tdHead'>"); echo($row[1]); echo(" - "); echo($row[2]); echo("
                             </td>
                         </tr>
                         <tr>
@@ -95,7 +94,7 @@ if(@$_GET['get'] == "true"){
                         </tr>
                         <tr>
                             <td>
-                                <h5>R$"); echo($row[4]); echo("</h4>
+                                <h3>R$"); echo($row[4]); echo("</h3>
                             </td>
                         </tr>
                         <tr>
@@ -137,7 +136,7 @@ if(@$_GET['get'] == "true"){
         
         while ($row = mysqli_fetch_row($db->res)) {
             $_SESSION['total'] = $row[0];
-            echo($row[0]);
+            echo("TOTAL R$"); echo($row[0]);
         }
     }
 }

@@ -18,9 +18,35 @@ function buy() {
         }
     }
 
-    getAll();  
-    
-    
+    getAll();     
     getCart();
 
+}
+
+
+// APPEAR PURCHASES
+
+function purchases() {
+    $( "#pur-card" ).toggle();
+    $( "#backMsg" ).toggle();
+
+    if($( "#pur-card:visible" )) {
+
+        getRequest = new XMLHttpRequest(); 
+
+        function getAll() {
+            getRequest.open('GET', '../services/sells.php?get=all');
+            getRequest.send();
+        }
+
+        getRequest.onreadystatechange = function(){
+            if(getRequest.readyState == 4){
+                var purchases = document.getElementById('purchases');
+                purchases.innerHTML = getRequest.responseText;          
+            }
+        }
+
+        getAll();
+
+    }
 }
