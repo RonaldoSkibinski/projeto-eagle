@@ -42,6 +42,8 @@ INSERT INTO medicines (cod, name, qtdmg, lab, val, img) VALUES (
 create table cart (
 	id INT NOT NULL AUTO_INCREMENT,
     userId INT,
-    medCod INT,
+    medCod INT
     PRIMARY KEY(id)
 ) 
+
+select * from cart

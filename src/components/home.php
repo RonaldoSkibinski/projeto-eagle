@@ -36,7 +36,14 @@ $name = $_SESSION['user'][0];
 
         <div data-role="page"> 
             <div data-role="header" class="header">
-                <h1>Olá <?php echo($name) ?></h1>
+                <table class="head-table">
+                    <tr>
+                        <td><h4>Olá <?php echo($name) ?></h4></td>
+                        <td><a onclick="cart()"><img width="25" src="../imgs/icons/cart.png"></a></td>
+                        <td><a><img width="25" src="../imgs/icons/user.png"></a></td>
+                    </tr>
+                </table>
+                
             </div>            
 
             <div data-role="content">
@@ -55,13 +62,14 @@ $name = $_SESSION['user'][0];
 
         <div id="backMsg"></div>
 
-        <div id="congratsMessage">
-            <div>
-                <h2>Credenciais não Encontradas </h2>
-                <p>Por favor, revise as informações de login.</p>
-            </div>
+        <div id="cart-card">
+            <div id="cart"></div>
+            <select>
+
+            </select>
             <div >
-                <a onclick="disarm()">Ok</a>
+                <a onclick="">Comprar</a>
+                <a onclick="cart()">Fechar</a>
             </div>
         </div>
 

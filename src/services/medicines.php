@@ -6,7 +6,7 @@
 
 //------------------------------------ GET MEDICINES -------------------------------------------------------------------------------------------------------------------------------------
 
-if(@$_GET['get']){
+if(@$_GET['get'] != "non"){
 
     try {
 
@@ -61,7 +61,66 @@ if(@$_GET['get']){
     }
       
 
-}   
+} else {
+
+    try {
+
+        $id = $_SESSION['id'][0];
+
+        $db->consulta("select cod, name, qtdmg, lab, val, img from medicines
+        INNER JOIN cart ON cart.medCod = medicines.cod ");
+
+        if($line=mysqli_num_rows($db->res) != 0){
+            
+            while ($row = mysqli_fetch_row($db->res)) {
+
+                echo("
+                
+                <div class='medicine-card-mini'>
+                    <table class='med-table'>
+                        <tr>
+                            <td>
+                                <img class='medImg-mini' src='"); echo($row[5]); echo("'> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>"); echo($row[1]); echo(" - "); echo($row[2]); echo("</h5>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                "); echo($row[3]); echo("
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h5>R$"); echo($row[4]); echo("</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class='btnMed' onclick='remCart("); echo($row[0]); echo(")'> Remover do Carrinho </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                ");
+            }   
+
+        } else {
+            // EMPTY TABLE
+            echo ('Carrinho Vazio');
+        }
+
+    }catch(Exception $e) {
+
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+        
+    }
+
+}
 
 //------------------------------------ ADDCART MEDICINES -------------------------------------------------------------------------------------------------------------
 
@@ -72,6 +131,23 @@ if(@$_GET['add']){
         $id = $_SESSION['id'][0];
         
         $db->consulta("insert into cart (userId, medCod) values ('$id', '$_GET[add]')");
+
+
+    } catch (Exception $e) {
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+    }
+
+}
+
+//------------------------------------ REMOVECART MEDICINES -------------------------------------------------------------------------------------------------------------
+
+if(@$_GET['rem']){
+
+    try {
+
+        $id = $_SESSION['id'][0];
+        
+        $db->consulta("delete from cart where userId = '$id' and medCod = '$_GET[rem]'");
 
 
     } catch (Exception $e) {

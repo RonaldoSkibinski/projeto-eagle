@@ -1,3 +1,21 @@
+
+function cart() {
+
+    backMsg = document.getElementById('backMsg');
+    cartCard = document.getElementById('cart-card');
+
+    if(backMsg.style.display == "block") {
+        backMsg.style.display = "none";
+        cartCard.style.display = "none";
+    }else {
+        backMsg.style.display = "block";
+        cartCard.style.display = "block";
+    }
+
+    getCart();    
+
+}
+
 // GET MEDICINES
 
 function getMedicines() {
@@ -19,6 +37,8 @@ function getMedicines() {
     getAll();
 }
 
+// ADD TO CART
+
 function addToCart(idProd) {
 
     medRequest = new XMLHttpRequest(); 
@@ -31,6 +51,46 @@ function addToCart(idProd) {
     }
 
     addMed();
+    getMedicines();
+
+}
+
+// GET CART
+
+function getCart() {
+
+    getRequest = new XMLHttpRequest(); 
+
+    function getAll() {
+        getRequest.open('GET', '../services/medicines.php?get=non');
+        getRequest.send();
+    }
+
+    getRequest.onreadystatechange = function(){
+        if(getRequest.readyState == 4){
+            var cart = document.getElementById('cart');
+            cart.innerHTML = getRequest.responseText;          
+        }
+    }
+
+    getAll();
+}
+
+// REMOVE FROM CART
+
+function remCart(idProd) {
+
+    remRequest = new XMLHttpRequest(); 
+
+    this.idProd = idProd;
+
+    function remMed() {
+        remRequest.open('GET', '../services/medicines.php?rem=' + this.idProd);
+        remRequest.send();
+    }
+
+    remMed();
+    getCart();
     getMedicines();
 
 }
