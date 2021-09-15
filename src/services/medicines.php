@@ -28,8 +28,7 @@ if(@$_GET['get'] == "true"){
                             </td>
                         </tr>
                         <tr>
-                            <td colspan='2'>
-                                <h4>"); echo($row[1]); echo(" - "); echo($row[2]); echo("</h4>
+                            <td colspan='2' class='tdHead'>"); echo($row[1]); echo(" - "); echo($row[2]); echo("
                             </td>
                         </tr>
                         <tr>

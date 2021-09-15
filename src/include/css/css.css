@@ -1,6 +1,10 @@
-@media only screen and (min-width: 670px) {
-    #medicines {
-        width: 650px !important;
+@media only screen and (min-width: 820px) {
+    .medicines {
+        width: 860px !important;
+        margin: 0 auto;
+    }
+    .content-two {
+        width: 860px !important;
     }
     #cart-card {
         width: 660px !important;        
@@ -8,11 +12,27 @@
         height: 560px !important;
     }
     #pur-card {
-        width: 60% !important;        
-        top: 200px;
+        width: 390px !important;    
+        height: 600px !important;    
+        top: 50px;
     }
 }
 
+@media only screen and (max-width: 820px) {
+    .medicines {
+        overflow-x: scroll !important;
+    }
+}
+
+
+.content {
+    text-align: center;
+}
+
+.content-two {
+    margin: 0 auto;
+    text-align: center;
+}
 
 a {
     cursor: pointer;
@@ -27,6 +47,7 @@ a {
 
 .head-table {
     width: 100%;
+    padding-left: 15px;
 }
 
 #mDiv {
@@ -109,7 +130,8 @@ a {
 
 #pur-card {
     position: fixed;
-    height: 450px;
+    width: 100%;
+    height: 100vh;
     display: none;    
     background-color: whitesmoke;
     margin: 0 auto;
@@ -130,6 +152,8 @@ a {
 #purchases {    
     overflow: auto;
     height: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 15px;
 }
   
 #backMsg {
@@ -148,19 +172,16 @@ a {
 .medImg-mini {
     width: 50px;
 }
-
 #medicines {
-    width: 100%;
-    height: 400px;
+    padding: 10px;
     text-align: center;
-    margin: 0 auto;
+    display: flex;
+    float: left;
 }
 
 .medicine-card {
     background-color: white;
-    width: 300px;
-    display: flex;
-    float: left;
+    width: 250px;
     text-align: center;
     border-radius: 15px;
     margin-bottom: 15px;
@@ -187,7 +208,7 @@ a {
 
 .btnNorm {
     border: none;
-    width: 100px;
+    width: 140px;
     height: 40px;
     border-radius: 15px;
     padding: 8px;
@@ -195,6 +216,7 @@ a {
     color: whitesmoke;
     cursor: pointer;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .btnMed {
@@ -206,17 +228,14 @@ a {
     color: whitesmoke;
     cursor: pointer;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .btnMed:hover {
-    border: none;
-    height: 45px;
-    border-radius: 15px;
-    padding: 8px;
     background-color: rgb(34, 36, 37);
-    color: whitesmoke;
-    cursor: pointer;
-    font-weight: bold;
+}
+.btnNorm:hover {
+    background-color: rgb(34, 36, 37);
 }
 
 .med-table {
@@ -224,7 +243,7 @@ a {
 }
 
 .td-bar {
-    background-color: rgb(255, 255, 227);
+    padding: 2px;
 }
 
 .tdHead {
@@ -241,4 +260,9 @@ a {
     height: 30px;
     border-radius: 5px;
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+.homeImg{
+    width: 100%;
+    left: 0;
 }

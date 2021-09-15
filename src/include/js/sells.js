@@ -27,8 +27,13 @@ function buy() {
 // APPEAR PURCHASES
 
 function purchases() {
+
+    if($( "#pur-card:hidden" )) {
+        $( "#popup:visible" ).toggle();
+    }
+    
     $( "#pur-card" ).toggle();
-    $( "#backMsg" ).toggle();
+    $( "#backMsg" ).toggle();    
 
     if($( "#pur-card:visible" )) {
 

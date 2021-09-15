@@ -34,30 +34,45 @@ $name = $_SESSION['user'][0];
 
     </head>
 
-    <body onLoad="getMedicines()">
+    <body onLoad="getMedicines()">       
 
         <div data-role="page"> 
             <div data-role="header" class="header">
                 <table class="head-table">
                     <tr>
-                        <td><h4>Olá <?php echo($name) ?></h4></td>
-                        <td><a onclick="cart()"><img width="25" src="../imgs/icons/cart.png"></a></td>
-                        <td><a onclick="popup()"><img width="25" src="../imgs/icons/user.png"></a></td>
+                        <td width="50"><img src="../imgs/icons/logofarmacia.png" width="40"></td>
+                        <td ><h4>Olá <?php echo($name) ?></h4></td>
+                        <td width="50"><a onclick="cart()"><img width="25" src="../imgs/icons/cart.png"></a></td>
+                        <td width="50"><a onclick="popup()"><img width="25" src="../imgs/icons/user.png"></a></td>
                     </tr>
                 </table>
                 
-            </div>            
+            </div>             
 
-            <div data-role="content">
+            <div class="content" data-role="content">
 
-                <div id="medicines"></div>              
+                <h3>Nossos Medicamentos: </h3>
+
+                <div class="medicines">
+                    <div id="medicines"></div>    
+                </div>                       
                 
                 <div id="popup">
                     <p><a onclick="purchases()">Compras</a></p>
                     <p><a onclick="logout()">Sair</a></p>
                 </div>
 
-            </div>          
+            </div>    
+            
+            <div class="content" data-role="content">
+                <div class="content-two" data-role="content">
+                    <h2>VIVA UMA VIDA LEVE</h2>
+                    <h5><a>ADQUIRA O NOSSO CARTÃO</a></h5>
+                    <div >
+                        <img class="homeImg" src="../imgs/imgs/life.jpg">
+                    </div>                    
+                </div>
+            </div>
 
             <div data-role="footer" class="ui-bar">
                 <a href="#" data-icon="arrow-u">Subir</a>
@@ -86,17 +101,18 @@ $name = $_SESSION['user'][0];
                         <td class="tdHead" colspan="2">Vai chegar em 3 dias.</td>
                     </tr>
                     <tr>
-                        <td><a onclick="buy()"><button id="buyBtn" class="btnNorm">Comprar</a></button></td>
-                        <td><a onclick="cart()"><button class="btnNorm">Fechar</a></button></td>
+                        <td><a onclick="buy()"><button id="buyBtn" class="btnNorm">Comprar</button></a></td>
+                        <td><a onclick="cart()"><button class="btnNorm">Fechar</button></a></td>
                     </tr>
                 </table>              
             </div>
         </div>
 
         <div id="pur-card">
+            <h4> Compras Realizadas: </h4>
             <div id="purchases"></div>
             <div>
-                <a onclick="purchases()"><button>Fechar</a></button>           
+                <a onclick="purchases()"><button class="btnNorm" style="margin-top: 10px;">Fechar</button></a>          
             </div>
         </div>
 
