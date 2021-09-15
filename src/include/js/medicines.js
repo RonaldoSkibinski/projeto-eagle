@@ -74,6 +74,30 @@ function getCart() {
     }
 
     getAll();
+    getTotCart()
+}
+
+// GET TOTAL CART
+
+function getTotCart() {
+    
+
+    totRequest = new XMLHttpRequest(); 
+
+    function getTotal() {
+        totRequest.open('GET', '../services/medicines.php?get=tot');
+        totRequest.send();
+    }
+
+    totRequest.onreadystatechange = function(){
+        if(totRequest.readyState == 4){
+            var total = document.getElementById('total');
+            total.innerHTML = totRequest.responseText;          
+        }
+    }
+
+    getTotal();
+
 }
 
 // REMOVE FROM CART
@@ -92,5 +116,6 @@ function remCart(idProd) {
     remMed();
     getCart();
     getMedicines();
+    getTotCart()
 
 }

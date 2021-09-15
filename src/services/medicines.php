@@ -2,11 +2,13 @@
   session_start();
   require("../include/lib/lib.php");
   $db = new banco();
+
+  $id = $_SESSION["id"][0];
   
 
 //------------------------------------ GET MEDICINES -------------------------------------------------------------------------------------------------------------------------------------
 
-if(@$_GET['get'] != "non"){
+if(@$_GET['get'] == "true"){
 
     try {
 
@@ -61,14 +63,12 @@ if(@$_GET['get'] != "non"){
     }
       
 
-} else {
+} else if(@$_GET['get'] == "non") {
 
-    try {
-
-        $id = $_SESSION['id'][0];
+    try {        
 
         $db->consulta("select cod, name, qtdmg, lab, val, img from medicines
-        INNER JOIN cart ON cart.medCod = medicines.cod ");
+        INNER JOIN cart ON cart.medCod = medicines.cod and cart.userId = '$id'");
 
         if($line=mysqli_num_rows($db->res) != 0){
             
@@ -107,12 +107,13 @@ if(@$_GET['get'] != "non"){
                 </div>
                 
                 ");
-            }   
+            }          
 
         } else {
             // EMPTY TABLE
             echo ('Carrinho Vazio');
-        }
+        }      
+
 
     }catch(Exception $e) {
 
@@ -120,6 +121,17 @@ if(@$_GET['get'] != "non"){
         
     }
 
+} else {
+    
+    $db->consulta("select SUM(val) AS total from medicines
+    INNER JOIN cart ON cart.medCod = medicines.cod and cart.userId = '$id'");
+
+    if($line=mysqli_num_rows($db->res) != 0){
+        
+        while ($row = mysqli_fetch_row($db->res)) {
+            echo($row[0]);
+        }
+    }
 }
 
 //------------------------------------ ADDCART MEDICINES -------------------------------------------------------------------------------------------------------------

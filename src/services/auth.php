@@ -41,6 +41,8 @@ if($_GET['user'] != ""){
                 @$_SESSION["id"] = [$id];
                 @$_SESSION["user"] = [$name];
                 @$_SESSION["email"] = [$_GET['user']];
+                @$_SESSION["total"] = 0;
+
 
             } else {
                 // WRONG PASSWORD

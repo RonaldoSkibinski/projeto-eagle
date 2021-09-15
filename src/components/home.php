@@ -6,6 +6,7 @@ if((!isset ($_SESSION['id']) == true) and (!isset ($_SESSION['email']) == true))
   unset($_SESSION['id']);
   unset($_SESSION['user']);
   unset($_SESSION['email']);
+  unset($_SESSION['total']);
   header('location:../../index.php');
 }
 
@@ -67,9 +68,18 @@ $name = $_SESSION['user'][0];
             <select>
 
             </select>
-            <div >
-                <a onclick="">Comprar</a>
-                <a onclick="cart()">Fechar</a>
+            <div>
+                <table>
+                    <tr>
+                        <td><div id="total"></div></td>
+                    </tr>
+                    <tr>
+                        <td><a onclick=""><button>Comprar</a></button></td>
+                    </tr>
+                    <tr>
+                        <td><a onclick="cart()"><button>Fechar</a></button></td>
+                    </tr>
+                </table>              
             </div>
         </div>
 
