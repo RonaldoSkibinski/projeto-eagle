@@ -26,15 +26,21 @@ if($_GET['user'] != ""){
                 // LOGIN OK
                 echo ('1');
 
-                $db->consulta("select name from user where email='$_GET[user]'");
+                $db->consulta("select id, name from user where email='$_GET[user]'");
+
+                $name;
+                $id;
 
                 if($line=mysqli_num_rows($db->res) != 0){
                     while ($row = mysqli_fetch_row($db->res)) {
-                        $name = $row[0];
+                        $name = $row[1];
+                        $id = $row[0];
                     }
                 }
 
-                @$_SESSION["user"]["email"]= [$name][$_GET['user']];
+                @$_SESSION["id"] = [$id];
+                @$_SESSION["user"] = [$name];
+                @$_SESSION["email"] = [$_GET['user']];
 
             } else {
                 // WRONG PASSWORD

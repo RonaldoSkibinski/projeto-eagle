@@ -1,3 +1,10 @@
+@media only screen and (min-width: 670px) {
+    #medicines {
+        width: 650px !important;
+    }
+}
+
+
 a {
     cursor: pointer;
     color: rgb(40, 133, 253);
@@ -69,4 +76,57 @@ a {
     display: none;
     width: 100%;
     height: 100vh;
+}
+
+.medImg {
+    width: 150px;
+}
+
+#medicines {
+    width: 320px;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.medicine-card {
+    background-color: white;
+    width: 300px;
+    display: flex;
+    float: left;
+    text-align: center;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.4);
+}
+
+.btnMed {
+    border: none;
+    height: 40px;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: rgb(40, 133, 253);
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btnMed:hover {
+    border: none;
+    height: 45px;
+    border-radius: 15px;
+    padding: 8px;
+    background-color: rgb(34, 36, 37);
+    color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.med-table {
+    width: 100%;
+}
+
+.td-bar {
+    background-color: rgb(255, 255, 227);
 }

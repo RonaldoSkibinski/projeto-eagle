@@ -18,3 +18,19 @@ function getMedicines() {
 
     getAll();
 }
+
+function addToCart(idProd) {
+
+    medRequest = new XMLHttpRequest(); 
+
+    this.idProd = idProd;
+
+    function addMed() {
+        medRequest.open('GET', '../services/medicines.php?add=' + this.idProd);
+        medRequest.send();
+    }
+
+    addMed();
+    getMedicines();
+
+}

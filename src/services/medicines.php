@@ -6,7 +6,7 @@
 
 //------------------------------------ GET MEDICINES -------------------------------------------------------------------------------------------------------------------------------------
 
-if($_GET['get']){
+if(@$_GET['get']){
 
     try {
 
@@ -19,15 +19,15 @@ if($_GET['get']){
                 echo("
                 
                 <div class='medicine-card'>
-                    <table>
+                    <table class='med-table'>
                         <tr>
                             <td colspan='2'>
-                                <img src='"); echo($row[5]); echo("'> 
+                                <img class='medImg' src='"); echo($row[5]); echo("'> 
                             </td>
                         </tr>
                         <tr>
                             <td colspan='2'>
-                                "); echo($row[1]); echo(" - "); echo($row[2]); echo("
+                                <h4>"); echo($row[1]); echo(" - "); echo($row[2]); echo("</h4>
                             </td>
                         </tr>
                         <tr>
@@ -35,19 +35,19 @@ if($_GET['get']){
                                 "); echo($row[3]); echo("
                             </td>
                         </tr>
-                        <tr>
+                        <tr class='td-bar'>
                             <td>
-                                "); echo($row[4]); echo("
+                                <h3>R$"); echo($row[4]); echo("</h4>
                             </td>
                             <td>
-                                <button onclick='addToCart("); echo($row[0]); echo(")'> Adicionar o Carrinho </button>
+                                <button class='btnMed' onclick='addToCart("); echo($row[0]); echo(")'> Adicionar o Carrinho </button>
                             </td>
                         </tr>
                     </table>
                 </div>
                 
                 ");
-            }            
+            }   
 
         } else {
             // EMPTY TABLE
@@ -62,5 +62,22 @@ if($_GET['get']){
       
 
 }   
+
+//------------------------------------ ADDCART MEDICINES -------------------------------------------------------------------------------------------------------------
+
+if(@$_GET['add']){
+
+    try {
+
+        $id = $_SESSION['id'][0];
+        
+        $db->consulta("insert into cart (userId, medCod) values ('$id', '$_GET[add]')");
+
+
+    } catch (Exception $e) {
+        echo 'Exceção capturada: ',  $e->getMessage(), "\n";
+    }
+
+}
 
 ?>

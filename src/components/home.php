@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if((!isset ($_SESSION['id']) == true) and (!isset ($_SESSION['email']) == true))
+{
+  unset($_SESSION['id']);
+  unset($_SESSION['user']);
+  unset($_SESSION['email']);
+  header('location:../../index.php');
+}
+
+$name = $_SESSION['user'][0];
+
+?>
+
 <!DOCTYPE html>
 <html>
     
@@ -21,12 +36,12 @@
 
         <div data-role="page"> 
             <div data-role="header" class="header">
-                <h1>Farmacia Terezinha</h1>
+                <h1>Olá <?php echo($name) ?></h1>
             </div>            
 
             <div data-role="content">
 
-                <div id="medicines"></div>
+                <div id="medicines"></div>              
 
             </div>          
 
