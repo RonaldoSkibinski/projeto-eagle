@@ -30,7 +30,7 @@
 
         <div data-role="page"> 
             <div data-role="header" class="header">
-                <h1>Farmacia Terezinha</h1>
+                    <td width="50"><img src="src/imgs/icons/logo-eagle.png" width="40"></td>
             </div>            
 
             <div class="content" data-role="content">

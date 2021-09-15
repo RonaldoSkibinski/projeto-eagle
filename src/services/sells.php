@@ -81,10 +81,10 @@ if(@$_GET['get']){
             // EMPTY TABLE
             echo ('Sem compras ainda.');
         } 
-
+        $c = 0;
         foreach ($sellId as &$value) {
 
-            $c = 0;
+            
 
             $db->consulta("select medicines.name, medicines.lab from medicines
                 INNER JOIN sellsmedicines ON sellsmedicines.medCod = medicines.cod 
@@ -102,7 +102,7 @@ if(@$_GET['get']){
                             <tr>
                                 <td class='tdHead'>
                                     Total: R$"); echo($sellTotal[$c]);
-                                    $c += 1;
+                                    $c = $c + 1;
                                     echo("
                                 </td>
                             </tr>                      
