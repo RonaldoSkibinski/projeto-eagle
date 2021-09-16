@@ -1,4 +1,12 @@
-select * from medicines
+create table user (
+	id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(30),
+    phone VARCHAR(14),
+    email VARCHAR(100),
+    address varchar(100),
+    password varchar(100),
+    PRIMARY KEY(id)    
+)
 
 create table medicines (
 	id INT NOT NULL AUTO_INCREMENT,
