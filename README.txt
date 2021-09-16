@@ -1,6 +1,6 @@
 Para usar esta aplicação {
 
-  1) Instalar o XAMPP
+  1) Instalar o XAMPP - (Acessar o xampp, ir em configs -> Services and ports -> Mysql, e mudar a porta para 3307 se estiver em 3306)
   
   2) Salvar o conteudo desta pasta dentro de uma pasta chamada Farmacia-Terezinha dentro do htdocs do xampp (C:\xampp\htdocs\)
   
