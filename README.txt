@@ -2,7 +2,7 @@ Para usar esta aplicação {
 
   1) Instalar o XAMPP
   
-  2) Salvar a (esta) pasta dentro de uma pasta chamada Farmacia-Terezinha dentro do htdocs do xampp (C:\xampp\htdocs\)
+  2) Salvar o conteudo desta pasta dentro de uma pasta chamada Farmacia-Terezinha dentro do htdocs do xampp (C:\xampp\htdocs\)
   
   3) Instalar o Mysql server
   
