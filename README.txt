@@ -6,15 +6,17 @@ Para usar esta aplicação {
   
   3) Instalar o Mysql server
   
-  3) Executar no mysql workbench as queries localizadas na pasta: Farmacia-Terezinha\src\dbqueries\queries.sql
+  4) Criar um schema chamado farmaciaterezinha no mysql
   
-  4) Configurar o arquivo lib do banco de dados para a conexão com o Mysql, caminho: Farmacia-Terezinha\src\include\lib\lib.php
+  5) Executar no mysql workbench as queries localizadas na pasta: Farmacia-Terezinha\src\dbqueries\queries.sql
   
-  5) Abrir o XAMPP e executar o Apache Server
+  6) Configurar o arquivo lib do banco de dados para a conexão com o Mysql, caminho: Farmacia-Terezinha\src\include\lib\lib.php
   
-  6) Abrir o seu navegador e digitar na url: http://localhost/Farmacia-Terezinha/
+  7) Abrir o XAMPP e executar o Apache Server
   
-  7) Agora é só usufruir desta 8ª maravilha do mundo!
+  8) Abrir o seu navegador e digitar na url: http://localhost/Farmacia-Terezinha/
+  
+  9) Agora é só usufruir desta 8ª maravilha do mundo!
 
 
 }
